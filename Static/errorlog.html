@@ -1,0 +1,39 @@
+﻿<div class="container loading" ng-if="disable">
+
+    <div class="loading-msg">
+        <h1>{{ 'errorLog.sending' | translate }}</h1>
+    </div>
+
+</div>
+
+
+<div class="container errorHandle" ng-if="!disable">
+    <p>
+        <label>{{ 'errorLog.errorCode' | translate }}:</label>
+        <textarea class="form-control errorCode" readonly maxlength="2000">
+            {{errorCode}}
+        </textarea>
+    </p>
+
+    <p>
+        <label>{{ 'errorLog.description' | translate }}:</label>
+        <textarea class="form-control userErrorDescription"
+                  ng-model="errorDescription" maxlength="2000"></textarea>
+    </p>
+ 
+
+    <div class="control-row">
+        <button class="btn btn-default"
+                ng-click="sendError()">
+            {{ 'buttonSend' | translate }}
+        </button>
+
+        <button class="btn btn-default"
+                ng-if="back"
+                ng-click="cancel()">
+            {{ 'buttonCancel' | translate }}
+        </button>
+    </div>
+
+</div>
+

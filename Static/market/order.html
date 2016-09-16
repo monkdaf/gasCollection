@@ -1,0 +1,56 @@
+﻿<div class="container loading" ng-show="$root.showLoadingState">
+
+    <div class="loading-msg">
+        <h1>Loading ...</h1>
+    </div>
+
+</div>
+
+<div ng-show="!$root.showLoadingState">
+    <button class="add btn btn-default"
+            ng-click="createForm('create', 'ins_Order')">
+        {{ 'buttonCreate' | translate }}
+    </button>
+
+    <button class="add btn btn-default"
+            ng-click="createForm('edit', 'upd_Order', selectedRow, 'COMM_ORDER')"
+            ng-disabled="!selectedRow">
+        {{ 'buttonEdit' | translate }}
+    </button>
+
+    <button class="add btn btn-default"
+            ng-click="deleteRow(selectedOrder)"
+            ng-disabled="!selectedOrder">
+        {{ 'buttonDelete' | translate }}
+    </button>
+
+    <button class="add btn btn-default"
+            ng-click="createForm('copy', 'ins_Order', selectedRow, 'COMM_ORDER')"
+            ng-disabled="!selectedRow">
+        {{ 'buttonCopy' | translate }}
+    </button>
+
+    <div id="orders">
+
+    </div>
+
+    <div id="orderDetails">
+
+    </div>
+
+    <div class="black-wrapper" ng-class="{'show': isShowModal}" ng-show="isShowModal">
+        <div class="modal additional">
+
+            <h4>{{orderCaption}}</h4>
+
+            <div class="formWrapper">
+
+                <div class="loading" ng-show="loadingModalData || processingTestPrint || processingOuterDataReceipt">
+                    loading...
+                </div>
+                <form id="orderForm" novalidate ng-show="!loadingModalData"></form>
+            </div>
+
+        </div>
+    </div>
+</div>

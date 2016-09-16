@@ -1,0 +1,240 @@
+﻿<div class="container loading" ng-show="$root.showLoadingState">
+
+    <div class="loading-msg">
+        <h1>Loading ...</h1>
+    </div>
+
+</div>
+
+<div ng-show="!$root.showLoadingState">
+    <button id="addFile" class="add btn btn-default">{{ 'market.buttonAddTempate' | translate }}</button>
+    <button class="add btn btn-default"
+            ng-if="labelTemplateMode"
+            ng-click="createForm('edit', 'upd_Order', selectedTemplateID, 'TEMPLATE')" 
+            ng-disabled="!selectedTemplateID">Тестовая печать</button>
+
+    <a href="{{downloadTechnicalList}}"
+       class="btn btn-default pull-right"
+       ng-if="labelTemplateMode">
+        {{ 'market.buttonDownloadTechSheet' | translate }}
+    </a>
+
+    <div id="files"
+         ng-class="{'logo': !labelTemplateMode}"
+         ></div>
+
+    <div id="createForm" style="display: none;">
+        <form id="fileForm"
+              method="post"
+              enctype="multipart/form-data"
+              action="test">
+            <div class="row col-md-10">
+
+                <div class="col-md-4">
+                    <label for="name">{{ 'market.grid.labelTemplate.templateName' | translate }}</label>
+                    <input type="text" class="form-control" id="name" name="Name" required />
+
+                </div>
+
+                <div class="col-md-4">
+                    <label for="status">
+                        {{ 'market.grid.labelTemplate.status' | translate }}
+                    </label>
+
+                    <div class="dropdown form-control">
+                        <div class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <input type="text" class="dropdown-input" name="Status" required />
+                            <span class="caret"></span>
+                        </div>
+                        <ul class="dropdown-menu" id="status" aria-labelledby="dropdownMenu1">
+                            <li>
+                                <a href="#">
+                                    Разработка
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Использование
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    История
+                                </a>
+                            </li>
+                        </ul>
+
+                        
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <label for="fileName">{{ 'market.grid.labelTemplate.fileName' | translate }}</label>
+                    <input type="text" class="form-control" id="fileName" name="FileName" readonly />
+
+                </div>
+
+                <div class="col-md-4">
+                    <label for="fileType">{{ 'market.grid.labelTemplate.fileType' | translate }}</label>
+                    <input type="text" class="form-control" id="fileType" name="FileType" readonly />
+
+                </div>
+
+                <div class="col-md-4">
+                    <label for="fileData">{{ 'market.grid.labelTemplate.file' | translate }}</label>
+                    <span class="btn btn-default btn-file">
+                        {{ 'buttonUpload' | translate }}
+                        <input type="file" class="form-control" id="fileDataCreate" name="Data" required />
+                    </span>
+                </div>
+
+                <div class="col-md-3">
+
+                    <label>&nbsp;</label>
+                    <button type="submit" class="btn btn-default">OK</button>
+                    <button id="cancelCreate" class="btn btn-default pull-right">{{ 'buttonCancel' | translate }}</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div id="editForm" style="display: none;">
+
+        <div class="panel panel-default col-md-4">
+
+            <div class="panel-heading">{{ 'market.grid.labelTemplate.changeFile' | translate }}:</div>
+
+            <div class="panel-body">
+                <form id="fileUploadForm"
+                      method="post"
+                      enctype="multipart/form-data"
+                      action="test">
+                    <div class="col-md-12">
+                        <label for="fileName">{{ 'market.grid.labelTemplate.fileName' | translate }}</label>                        
+                        <input type="text" class="form-control" id="fileName" name="FileName" readonly />
+                     
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="fileData">{{ 'market.grid.labelTemplate.file' | translate }}</label>
+                        <span class="btn btn-default btn-file">
+                            {{ 'buttonUpload' | translate }}
+                            <input type="file" class="form-control" id="fileDataEdit" name="Data" required />
+                        </span>
+
+                    </div>
+
+                    <input type="hidden" name="Name">
+                    <input type="hidden" name="Status">
+                    <input type="hidden" name="FileType">
+
+                    <div class="col-md-6">
+
+                        <label>&nbsp;</label>
+                        <button type="submit"
+                                ng-class="{'btn-small upload-button-small': locale == 'ua' }"
+                                class="btn btn-default pull-right">
+                            {{ 'market.grid.labelTemplate.upload' | translate }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+
+        <div class="panel panel-default col-md-7 pull-right">
+
+            <div class="panel-heading">{{ 'market.grid.labelTemplate.changeDescription' | translate }}:</div>
+
+            <div class="panel-body">
+                <form id="filePropertiesForm"
+                      action="test">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="name">{{ 'market.grid.labelTemplate.templateName' | translate }}</label>                           
+                            <input type="text" class="form-control" id="name" name="Name" required />
+                            
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="status">
+                                {{ 'market.grid.labelTemplate.status' | translate }}
+                            </label>
+
+                            <div class="dropdown form-control">
+                                <div class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <input type="text" class="dropdown-input" name="Status" required />
+                                    <span class="caret"></span>
+                                </div>
+                                <ul class="dropdown-menu" id="status" aria-labelledby="dropdownMenu1">
+                                    <li>
+                                        <a href="#">
+                                            Разработка
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Использование
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            История
+                                        </a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <label for="fileType">{{ 'market.grid.labelTemplate.fileType' | translate }}</label>
+                            <input type="text" class="form-control" id="fileType" name="FileType" readonly />
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label>&nbsp;</label>
+                            <button type="submit" class="btn btn-default pull-right">{{ 'market.grid.labelTemplate.update' | translate }}</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            
+        </div>
+
+        <div class="col-md-12 text-center">
+            <button id="cancelEdit" class="btn btn-default pull-right">{{ 'buttonCancel' | translate }}</button>
+        </div>
+        
+    </div>
+    
+</div>
+
+<div class="black-wrapper" ng-class="{'show': isShowModal}" ng-show="isShowModal">
+    <div class="modal additional">
+
+        <h4>Тестовая печать</h4>
+
+        <div class="formWrapper">
+
+            <div class="loading" ng-show="loadingModalData || processingTestPrint">
+                loading...
+            </div>
+            <form id="orderForm" novalidate ng-show="!loadingModalData"></form>
+        </div>
+
+    </div>
+</div>
+
+
+

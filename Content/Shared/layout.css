@@ -1,0 +1,1123 @@
+﻿/*preset*/
+html, body, section.container{
+    height:100%;
+}
+
+body{
+    padding: 0;
+}
+
+.navbar-fixed-top{
+    position: relative;
+}
+
+/*modified grid*/
+
+.jsgrid-filter-row input, .jsgrid-filter-row textarea, .jsgrid-filter-row select, .jsgrid-edit-row input, .jsgrid-edit-row textarea, .jsgrid-edit-row select, .jsgrid-insert-row input, .jsgrid-insert-row textarea, .jsgrid-insert-row select {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 0;
+}
+
+.jsgrid-table img{
+    width: 130px;
+    height: auto;
+}
+
+.logo .jsgrid-table img{
+    width: 100px;
+}
+
+.row{
+    padding: 0;
+}
+
+/*hide 'default' datepicker div*/
+div.row + #ui-datepicker-div,
+form#form + #ui-datepicker-div{
+    display: none;
+}
+
+#ui-datepicker-div{
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    position:absolute;
+    left: -9999px;
+}
+
+.ui-icon.ui-icon-circle-triangle-e{
+    float: right;
+}
+
+/*modified bootstrap*/
+
+label{
+    font-weight: normal
+}
+
+.my-navbar-brand{
+    margin-left: -5px;
+}
+
+th {
+    text-align: center;
+}
+
+.dropdown, .dropdown-input, .dropdown-toggle{
+    cursor: pointer!important;
+}
+
+.container {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cancelMarginLeft{
+    margin-left:0;
+}
+
+.cancelPaddingLeft{
+    padding-left:0;
+}
+
+input.form{
+    margin-left: 12px;
+}
+
+caption{
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+ul#item_list.pre-scrollable{
+    max-height:500px;
+}
+
+select.input-small{
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
+span.select-form-result{
+    margin-left: 30px;
+}
+
+p.not-editable-field{
+    display: inline-block;
+    height: 26px;
+    margin: 5px 0 0 11px;
+}
+
+.bool-checkbox{
+    margin: 8px 0 0 12px!important;
+}
+
+span.state{
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+span.state.success{
+    color: green;
+}
+
+span.state.failed{
+    color: red;
+}
+
+input#fileUpload{
+    margin-left: 12px;
+}
+
+input.dropdown-input{
+    outline: none;
+    border: none;
+    width: 92%!important;
+    height: 25px;
+    margin-top: -2px;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+	margin-left: 12px;
+}
+
+.modal{
+    box-sizing:border-box;
+    padding: 10px;
+    width: 780px;
+    margin-left: -390px;
+    top: 7%;
+}
+
+.scaleZone img{
+    width: 100%;
+}
+
+.nav-tabs{
+    margin-bottom: 10px;
+}
+
+.nav-tabs > li > a {
+    padding: 10px 14px;
+}
+
+.btn-circle{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    outline:none;
+    box-sizing: border-box;
+    padding-top: 7px;
+}
+
+.remove-margin-left{
+    margin-left: 0;
+}
+
+label.control-label{
+    margin-bottom: 0;
+}
+
+/*modified datetimepicker*/
+
+a.ui-state-default{
+    padding:5px;
+}
+
+span.ui-spinner.ui-widget.ui-widget-content.ui-corner-all{
+    height: 32px;
+    display: inline-block;
+    width: 80px;
+    position: relative;
+}
+
+span.ui-spinner.ui-widget.ui-widget-content.ui-corner-all input{
+    padding: 3px 5px;
+    height: auto;
+    width: 55px;
+}
+
+a.ui-spinner-button.ui-spinner-up.ui-corner-tr{
+    position: absolute;
+    top: -5px;
+    right: 0;
+}
+
+a.ui-spinner-button.ui-spinner-down.ui-corner-br{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.ui-datepicker-close{
+    margin-left: 5px;
+}
+
+/*tree grid modified*/
+
+div.mainButtonsControls input[type='text'], div.createNodeControls input[type='text']{
+    margin: 0;
+}
+
+div.mainButtonsControls button{
+    margin-right: 5px;
+}
+
+div.createNodeControls button#accept{
+    margin: 0 5px 0 5px;
+}
+
+div#treeRoot{
+    margin-top:10px;
+}
+
+div.treeContainer{
+    padding: 10px;
+    margin-left: 0;
+}
+
+div#jstree{
+    margin-top:10px;
+}
+
+.disabled-grid{
+    opacity:0.5;
+    pointer-events:none;
+}
+
+div.modal.treeControls{
+    width: 300px;
+    margin-left: -150px;
+    /*overflow: hidden;*/
+}
+
+div.modal.treeControls input{
+    display: block;
+    width: 264px;
+}
+
+div.modal.treeControls input.dropdown-input{
+    display: inline-block;
+}
+
+div.disableComboTree{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    opacity: .8;
+}
+
+div.modal.treeControls select{
+
+    width: 278px;
+}
+
+.modal.treeControls .additionalFields{
+    margin-bottom: 10px;
+}
+
+.modal.treeControls button{
+    margin-right: 5px;
+}
+
+/*workshop specs*/
+
+.active-row > td{
+    background: #c4e2ff!important;
+    border-color: #c4e2ff!important;
+}
+
+.selected-row > td{
+    background: #75BCFF!important;
+    border-color: #75BCFF!important;
+}
+
+/*index page*/
+
+.main-menu{
+    z-index:1;
+}
+
+.loading{
+
+    position: fixed;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    display: table;
+    z-index:1;
+}
+
+.loading-msg{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*market page*/
+
+button.add{
+    margin-bottom:20px;
+}
+
+.wrong{
+    border-color:red!important
+}
+
+.input-group input{
+    height: 20px;
+    margin-bottom: 0;
+}
+
+.black-wrapper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+.formWrapper{
+    min-height: 510px;
+    margin: 10px 0 0 0;
+}
+
+.formWrapper .loading{
+    top: 0;
+    left: 0;
+    height: 60%;
+    text-align: center;
+    padding-top: 34%;
+    width: 100%;
+    position: absolute;
+    display: block;
+}
+
+.modal.fullImage{
+    width:auto;
+    padding: 15px;
+    max-width: 800px;
+}
+
+.modal.fullImage .btn-circle{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.upload-button-small{
+    padding: 4px 10px;
+}
+
+/*form style*/
+.control-group{
+    display: inline-block;
+    width: 244px;
+    margin-bottom: 5px;
+    vertical-align:top;
+}
+
+.control-group input, .control-group .dropdown.form-control{
+    width: 220px;
+}
+
+.control-group select{
+    width: 233px;
+}
+
+.control-row{
+    padding-right: 10px;
+    text-align: center;
+}
+
+div.control-row button.btn{
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+/*modified tree*/
+
+.jstree-anchor{
+    white-space: pre-wrap!important
+}
+
+.jstree-default .jstree-anchor{
+    height:auto!important;
+}
+
+.relative{
+    position: relative;
+}
+
+.disable{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:5;
+    background: rgba(255, 255, 255, 0.5);
+    display: none;
+}
+
+
+div.gridWrapper{
+    position:relative;
+}
+
+/*error handling*/
+
+.errorHandle{
+    margin-top:100px
+}
+
+div.errorHandle label{
+    display:inline-block;
+    width: 150px;
+    text-align: right;
+    vertical-align:top;
+}
+
+.errorHandle textarea{
+    display:inline-block;
+    vertical-align: top;
+    width: 760px;
+    height: 200px;
+    resize:none;
+}
+
+/*marker*/
+
+.changeSide{
+    width: 245px;
+}
+
+.changeSide .dropdown-toggle{
+    box-sizing: border-box;
+    padding-left: 95%;
+}
+
+.scaleWrapper{
+    display: table;
+}
+
+.scaleCount-1{
+    width: 235px;
+}
+
+.scaleCount-2{
+    width: 470px;
+}
+
+.scaleCount-3{
+    width: 705px;
+}
+
+.scaleCount-4{
+    width: 940px;
+}
+
+.scaleGroup{
+    display:table-row;
+    height: 65px;
+}
+
+.scaleContainer{
+    display: table-cell;
+    width:25%;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    background: #f2f2f2;
+    outline: 1px solid #d4d4d4;    
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+.scaleContainer .circle{
+    position:absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.scaleContainer .circle.red{
+    background: red;
+}
+
+.msgRed{
+    color: red;
+    display: block;
+    text-align: center;
+
+}
+
+.scaleContainer .circle.green{
+    background: lightgreen;
+}
+
+.scaleContainer label{
+    position: absolute;
+    left: 5px;
+    top:5px;
+}
+
+.scaleContainer.active{
+    color: #555555;
+    text-decoration: none;
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+    background-image: none!important;
+    filter: none;
+}
+
+
+
+.scaleDetailInfo{
+    background-color: #eeeeee;
+    margin-top: 30px;
+}
+
+.scaleInfo{
+    position:relative;
+    display:inline-block;
+    width:33%;
+    height: 400px;
+    vertical-align:top;
+    box-sizing:border-box;
+    min-height: 100%;
+}
+
+.failure{
+    vertical-align: middle;
+    
+}
+
+.failureMsg{
+    text-transform: uppercase;
+    font-size: 36px;
+    color: red;
+}
+
+.scaleInfo:nth-child(2){
+    border-left:1px solid #d4d4d4;
+    border-right:1px solid #d4d4d4;
+    padding: 65px 10px 0 10px;
+}
+
+.scaleInfo:nth-child(3) {
+    padding: 10px;
+}
+
+h4.scalesName{
+    position: absolute;
+    top:5px;
+    left:5px;
+}
+
+.isStableScalesIndicator{
+
+    position:relative;
+    width:0;
+    height:0;
+    display:inline-block;
+    vertical-align: top;
+    margin-left: 0;
+    border-left: 15px solid #000;
+    border-right: 15px solid #000;
+    border-bottom: 15px solid #000;
+    border-top: 15px solid transparent;
+}
+
+.isStableScalesIndicator:before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 15px;
+    background: #eee;
+    top: 0px;
+    left: -15px;
+}
+
+.scaleInfoContainer{
+    display:table;
+    width: 100%;
+}
+
+.scaleInfoContainer .description, .scaleInfoContainer .value{
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.scaleInfoContainer .description{
+    text-align: left;
+}
+
+.scaleInfoContainer .value {
+    text-align: right;
+}
+
+.scalesValue{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.rodsValue{
+    font-size:18px;
+    font-weight: bold;
+}
+
+.scaleInfo .controls{
+    position: absolute;
+    bottom: 10px;
+    width: 94%;
+    text-align: center;
+}
+
+.scaleInfo:nth-child(2) .controls button{
+    width: 49%;
+    margin-bottom: 5px;
+}
+
+.scaleInfo:nth-child(2) .controls button:last-child{
+    margin-bottom: 0;
+}
+
+.section{
+    box-sizing:border-box;
+    margin-bottom: 5px;
+    margin-left: 12px;
+}
+
+/*task (left part in marker interface)*/
+
+.task .controlsWrapper{
+    font-size: 0;
+    width:101%;
+}
+
+.task .controlsGroup{
+    width: 49%; 
+    display: inline-block; 
+    vertical-align: top; 
+    font-size:12px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.task .controlsGroup:nth-child(2n){
+    width: 50%;
+}
+
+div.controlsRow{
+    font-size: 0;
+    position: relative;
+    height: 30px;
+    margin-bottom: 10px;
+    display: table;
+    width: 100%;
+}
+
+
+div.controlsGroup:nth-child(2n) div.captionTask {
+    padding-left: 0px;
+}
+
+div.captionTask{
+    width: 56%;
+    height: 100%;
+    text-align: right;
+    line-height: 12px;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding-right: 3px;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+} 
+
+div.controlTask{
+    width: 40%;
+    text-align: right;
+    line-height: 12px;
+    font-size: 12px;
+}
+
+div.controlTask div.disableDropDown{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 105%;
+    height: 100%;
+    z-index: 11;
+}
+
+div.controlTask input, div.controlTask .dropdown{
+    width: 66px;
+    padding: 3px 5px;
+    margin-bottom: 0;
+    height: 30px;
+    text-align: right;
+}
+
+div.controlTask .dropdown {
+    position:relative;
+    z-index:10;
+}
+
+div.controlTask .dropdown-toggle{
+    position: relative;
+}
+
+div.controlTask .dropdown-toggle .dropdown-input {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    height: 28px;
+    width: 46px!important;
+}
+
+.dropdown-toggle .dropdown-input[disabled]{
+    background: #fff;
+}
+
+.dropdown.form-control.disabled,
+
+.dropdown.form-control.disabled .dropdown-toggle .dropdown-input[disabled]
+{
+    background: #eee;
+}
+
+/* task (right part)*/
+
+.sectionItem{
+    display:inline-block;
+    width: 80px;
+}
+
+.autoManuMsg{
+    position: absolute;
+    top: 16px;
+    right: 10px;
+}
+
+.sectionItem label{
+    font-size: 13px;
+}
+
+.sectionItem:nth-child(1){
+    width: 110px;
+}
+
+.sectionItem:nth-child(1) input{
+    width: 110px;
+}
+
+.sectionItem:nth-child(2) input{
+    width: 80px;
+}
+
+.sectionItem:nth-child(3) input{
+    width: 97px;
+}
+
+.labelTask{
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+.modal.additional{
+    padding: 0 0 10px 0;
+}
+
+.modal.additional h4{
+    background: #eeeeee;
+    padding: 15px 15px 15px 10px;
+    margin-top: 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.modal .btn.btn-circle{
+    margin: 10px 10px 0 0;
+}
+
+.enterLabelWrapper{
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.modal.additional .formWrapper{
+    margin: 10px 0 0 20px;
+}
+
+.enterLabelWrapper select.input-small{
+    margin:0;
+}
+
+.enterLabelWrapper input.dropdown-input{
+    width: 90%!important
+}
+
+.specialLabelMode{
+    width: 49%;
+    margin-bottom: 5px;
+}
+
+.specialLabelMode.active{
+    background: #2DBE95;
+}
+
+.plotVisible{
+    height: 145px;
+    margin-top: 15px;
+}
+
+.scaleContainer.active .jqplot-series-shadowCanvas{
+    background: #e5e5e5;
+}
+
+.scaleContainer .jqplot-series-shadowCanvas{
+    background: #f2f2f2;
+}
+
+/*monitor*/
+
+.markerView{
+    display: block; 
+    height: 93%;
+}
+
+.monitorWrapper{
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: #fff;
+    z-index:2;
+}
+
+.monitorControls{
+    height: 5%;
+    font-size: 0;
+}
+
+.monitorCaptions{
+    height: 10%;
+    font-size: 0;
+}
+
+.monitorSide{
+    display:inline-block; 
+    width:50%; 
+    font-size: 14px; 
+    height: 100%;   
+    vertical-align:top
+}
+
+.monitorSide.caption{
+    font-size: 70px;
+    box-sizing: border-box;
+    padding-left: 3%;
+}
+
+.monitorSidesWrapper{
+    font-size:0; 
+    height: 90%;  
+}
+
+.monitorSideItem{
+   width:100%;
+   height: 50%;
+   box-sizing: border-box;
+}
+
+.monitorSide.control{
+    padding: 15px;
+    box-sizing:border-box;
+}
+
+.monitorSide div.dropdown{
+    width: 150px;
+    display: inline-block;
+}
+
+.monitorSide div.dropdown input.dropdown-input{
+    width: 105px!important;
+}
+
+.monitorSideItem.red{
+    background: tomato;
+}
+
+.monitorSideItem.green{
+    background: lightGreen;
+}
+
+.monitorSideItem .paramCaption{
+    display: block;
+    padding: 20px 0 60px 0;
+    text-align: center;
+    font-size: 64px;
+    font-family: 'Arial Narrow', sans-serif
+}
+
+.monitorSideItem .paramValue{
+    display: block;
+    margin-top: -17%;
+    text-align: center;
+    font-size: 300px;
+    font-family: 'Arial Narrow', sans-serif
+}
+
+.item-1{
+    border-top: 4px solid #ccc;
+    border-left: 4px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+}
+
+.item-2{
+    border-top: 4px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    border-right: 4px solid #ccc;
+}
+
+.item-3{
+    border-top: 2px solid #ccc;
+    border-left: 4px solid #ccc;
+    border-bottom: 4px solid #ccc;
+    border-right: 2px solid #ccc;
+}
+
+.item-4{
+    border-top:2px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-bottom: 4px solid #ccc;
+    border-right: 4px solid #ccc;
+}
+
+.control:nth-child(1), .caption:nth-child(1){
+    border-right: 2px solid #ccc;
+}
+
+.control:nth-child(2), .caption:nth-child(2){
+    border-left: 2px solid #ccc;
+}
+
+/*version*/
+
+.vertical-align-top{
+    vertical-align: top;
+}
+
+div.versionData table{
+    width: 100%;
+}
+
+/*diagnostics*/
+
+.changeSideDiagnostics{
+    width: 225px;
+}
+
+.changeSideDiagnostics .dropdown-toggle{
+    width: 200px;
+}
+
+.diagnosticsTableContainer{
+    margin-top: 10px;
+
+}
+
+/*sap comm.*/
+.sapCommunicationContainer .row{
+    margin-bottom:10px;
+}
+
+/*label template*/
+#editForm .panel{
+    padding: 0;
+}
+
+/*calendar events*/
+.dhx_wrap_section{
+    min-height: 36px;
+    padding: 2px 0px 2px 10px; 
+}
+
+.dhx_cal_event_clear.dhx_cal_event_line_start.dhx_cal_event_line_end{
+    line-height: normal;
+}
+
+.dhx_cal_light.dhx_cal_light_wide{
+    height: auto!important;
+    padding-bottom: 10px!important;
+}
+
+.dhx_section_time select{
+    width: 70px;
+}
+
+/*chart*/
+
+.date-control-wrapper{
+    display: inline-block;
+}
+
+.date-control-wrapper > input{
+    display: inline-block;
+    width: 180px;
+    margin: 0 8px;
+}
+
+.chart-container{
+    height: 500px;
+}
+
+.state-data-inside.loading{
+    position: relative;
+    width:100%;
+}
+
+table.jqplot-table-legend{
+    top:520px!important;
+}
+
+table.jqplot-table-legend tr{
+    padding: 10px;
+}
+
+.jqplot-highlighter-tooltip{
+    font-size: 22px!important;
+}
+
+td.jqplot-table-legend{
+    font-size: 18px;
+    padding:5px!important;
+}
+
+.jqplot-table-legend .jqplot-series-hidden{
+    text-decoration: none!important;
+}
+
+table.jqplot-table-legend input[type=checkbox]{
+    float:left;
+    margin: 5px 5px 0 0!important;
+}
+
+.div.jqplot-table-legend-swatch{
+    border-width: 6px 6px;
+}
+
+.jqplot-table-legend-swatch-outline{
+    float:right;
+    margin-top:4px;
+}
+
+/*statistics*/
+
+#handModeGrid .jsgrid-grid-header.jsgrid-header-scrollbar,
+#handModeGrid .jsgrid-grid-body{
+    overflow-y:auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+

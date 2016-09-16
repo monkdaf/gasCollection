@@ -1,0 +1,17 @@
+﻿<div class="jumbotron" ng-if="hasRoles">
+
+    <h1>{{ 'welcome.Welcome' | translate }}</h1>
+
+    <p>{{ 'welcome.UseRoles' | translate }}</p>
+
+</div>
+
+<!--
+    No roles available
+    Show special mesasge in this case
+-->
+<div class="jumbotron" ng-if="!hasRoles">
+
+    <p>{{ 'welcome.NoRoles' | translate }}</p>
+
+</div>

@@ -1,0 +1,140 @@
+﻿<div class="monitorWrapper">
+    <div class="monitorControls">
+        <div class="monitorSide control">
+            
+                {{'marker.monitorCaptions.scales' | translate}}:
+                            
+                <dropdown iterator="scalesList"
+                          model="scaleLeft"
+                          description=""
+                          wrong-expr=""
+                          method-on-click="getScalesInfo"
+                          show-disable-div="false"
+                          standard=""
+                          side="'left'">
+
+                </dropdown>
+            
+                {{'marker.monitorCaptions.weightRods' | translate}}:
+
+                <dropdown iterator="shownParamsList"
+                          model="shownTypeLeft"
+                          description=""
+                          wrong-expr=""
+                          method-on-click=""
+                          show-disable-div="false"
+                          standard=""
+                          side="'left'">
+
+                </dropdown>
+        </div>
+        <div class="monitorSide control">
+            {{'marker.monitorCaptions.scales' | translate}}:
+            <!--<select class="form-control input-medium"
+                    ng-model="scaleRight"
+                    ng-change="getScalesInfo()"
+                    ng-options="o.Description for o in scalesList track by o.ID"></select>-->
+            <dropdown iterator="scalesList"
+                      model="scaleRight"
+                      description=""
+                      wrong-expr=""
+                      method-on-click="getScalesInfo"
+                      show-disable-div="false"
+                      standard=""
+                      side="'right'">
+
+            </dropdown>
+
+            {{'marker.monitorCaptions.weightRods' | translate}}:
+                <!--<select class="form-control input-medium"
+                        ng-model="shownTypeRight"
+                        ng-change="changeParamTypeRightSide()"
+                        ng-options="o.Name for o in shownParamsList"></select>-->
+            <dropdown iterator="shownParamsList"
+                      model="shownTypeRight"
+                      description=""
+                      wrong-expr=""
+                      method-on-click=""
+                      show-disable-div="false"
+                      standard=""
+                      side="'right'"></dropdown>
+                    
+        </div>
+    </div>
+
+    <div class="monitorCaptions">
+        <div class="monitorSide caption">
+            {{scalesLeftSideInfo.ScalesName}}
+        </div>
+
+        <div class="monitorSide caption">
+            {{scalesRightSideInfo.ScalesName}}
+        </div>
+    </div>
+
+    <div class="monitorSidesWrapper">
+        <div class="monitorSide">
+            <div class="monitorSideItem item-1"
+                 ng-class="{'red': scalesLeftSideInfo && shownTypeLeft && scalesLeftSideInfo.POCKET_LOC,
+                            'green': scalesLeftSideInfo && shownTypeLeft && !scalesLeftSideInfo.POCKET_LOC}">
+
+                <p ng-show="shownTypeLeft.id == 0">
+                    <span class="paramCaption">
+                        {{'marker.monitorCaptions.packWeight' | translate}}:
+                    </span>
+                    <span class="paramValue">
+                        {{scalesLeftSideInfo.WEIGHT_CURRENT}}
+                    </span>
+                </p>
+                <p ng-show="shownTypeLeft.id == 1">
+                    <span class="paramCaption">{{'marker.monitorCaptions.rodsQuantity' | translate}}:</span>
+                    <span class="paramValue">{{scalesLeftSideInfo.RodsQuantity}}</span>
+
+                </p>
+            </div>
+            <div class="monitorSideItem item-3" ng-show="shownTypeLeft.id == 1"
+                 ng-class="{'red': scalesLeftSideInfo && shownTypeLeft && scalesLeftSideInfo.POCKET_LOC,
+                            'green': scalesLeftSideInfo && shownTypeLeft && !scalesLeftSideInfo.POCKET_LOC}">
+
+                <span class="paramCaption">
+                    {{'marker.monitorCaptions.rodsLeft' | translate}}:
+                </span>
+                <span class="paramValue"
+                      ng-show="scalesLeftSideInfo.rodsLeftCounted != null">
+                    <span ng-show="scalesLeftSideInfo.rodsLeftCounted > 0">+</span>
+                    {{scalesLeftSideInfo.rodsLeftCounted}}
+                </span>
+
+            </div>
+
+        </div>
+        <div class="monitorSide">
+            <div class="monitorSideItem item-2"
+                 ng-class="{'red': scalesRightSideInfo && shownTypeRight && scalesRightSideInfo.POCKET_LOC,
+                            'green': scalesRightSideInfo && shownTypeRight && !scalesRightSideInfo.POCKET_LOC}">
+                <p ng-show="shownTypeRight.id == 0">
+                    <span class="paramCaption">{{'marker.monitorCaptions.packWeight' | translate}}:</span>
+                    <span class="paramValue">{{scalesRightSideInfo.WEIGHT_CURRENT}}</span>
+
+                </p>
+                <p ng-show="shownTypeRight.id == 1">
+                    <span class="paramCaption">{{'marker.monitorCaptions.rodsQuantity' | translate}}:</span>
+                    <span class="paramValue">{{scalesRightSideInfo.RodsQuantity}}</span>
+
+                </p>
+            </div>
+            <div class="monitorSideItem item-4" ng-show="shownTypeRight.id == 1"
+                 ng-class="{'red': scalesRightSideInfo && shownTypeRight && scalesRightSideInfo.POCKET_LOC,
+                            'green': scalesRightSideInfo && shownTypeRight && !scalesRightSideInfo.POCKET_LOC}">
+                <span class="paramCaption">{{'marker.monitorCaptions.rodsLeft' | translate}}:</span>
+
+                <span class="paramValue"
+                      ng-show="scalesRightSideInfo.rodsLeftCounted != null">
+                    <span ng-show="scalesRightSideInfo.rodsLeftCounted > 0">+</span>
+                    {{scalesRightSideInfo.rodsLeftCounted}}
+                </span>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿<label ng-hide="side">{{ 'pa.diagnostics.changeSide' | translate }}:</label>
+
+<div class="dropdown form-control changeSideDiagnostics" ng-hide="side">    
+
+    <div class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        
+        <input type="text"
+               class="dropdown-input"
+               ng-model="selectedSide.Description" />
+        <span class="caret"></span>
+    </div>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li ng-repeat="side in availableSides | orderBy:'Description'">
+            <a href="#"
+               ng-click="changeSide(side.ID); $event.preventDefault();">
+                {{side.Description}}
+            </a>
+        </li>
+    </ul>
+</div>
+
+<table ng-show="selectedSide" class="table table-striped table-condensed">
+    <caption>
+
+        <span>{{selectedSide.Description}}</span>
+    </caption>
+    <tr>
+        <th>{{'pa.diagnostics.equipmentName' | translate}}</th>
+        <th>{{'pa.diagnostics.equipmentStatus' | translate}}</th>
+    </tr>
+    <tr ng-repeat="item in diagnosticsInfo | orderBy:'EquipmentName'">
+        <td>{{item.EquipmentName}}</td>
+        <td>{{item.EquipmentStatus}}</td>
+    </tr>
+</table>
+

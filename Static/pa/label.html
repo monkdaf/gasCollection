@@ -1,0 +1,49 @@
+﻿<div class="container loading" ng-show="$root.showLoadingState">
+
+    <div class="loading-msg">
+        <h1>Loading ...</h1>
+    </div>
+
+</div>
+
+<div ng-show="!$root.showLoadingState">
+
+    <button class="btn add btn-default"
+            ng-click="labelPrintAction('upd_JobOrderPrintLabelReprint')">
+        {{ 'pa.LabelButtons.print' | translate }}
+    </button>
+    <button class="btn add btn-default"
+            ng-click="labelPrintAction('upd_JobOrderPrintLabelCancel')">
+        {{ 'pa.LabelButtons.cancelPrint' | translate }}
+    </button>
+    <button class="btn add btn-default"
+            ng-click="refreshInfo()">
+        {{ 'pa.LabelButtons.refresh' | translate }}
+    </button>
+
+    <div>
+        <div id="material_lot" ng-show="showGrid">
+
+        </div>
+
+        <div ng-show="!showGrid" style="display: table; height:500px; width: 940px">
+            <p style="display: table-cell;text-align: center;vertical-align: middle;">
+                Loading ...
+            </p>
+                
+        </div>
+    </div>
+
+    <div>
+        <div class="gridWrapper">
+            <div class="disable" id="materialLotPropertyDisable">
+
+            </div>
+
+            <div id="material_lot_property">
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,753 @@
+﻿<div class="container loading" ng-if="!sides">
+
+    <div class="loading-msg">
+        <h1>{{ 'loadingMsg' | translate }}</h1>
+    </div>
+
+</div>
+
+<div class="container" ng-if="sides && sides.length > 1" ng-hide="sideIsSelected">
+
+    <label>{{ 'marker.changeSide' | translate }}</label>
+    
+    <div class="col-md-4 cancelPaddingLeft">
+        <dropdown iterator="sides"
+                  method-on-click="currentScales"
+                  show-disable-div="false">
+
+        </dropdown>
+    </div>
+    
+</div> 
+
+<div class="container loading" ng-if="!scales && scaleLoading">
+
+    <div class="loading-msg">
+        <h1>{{ 'loadingMsg' | translate }}</h1>
+    </div>
+
+</div>
+
+
+
+<div class="container" ng-if="scales && !scaleLoading">
+
+    <p>{{currentSide}}</p>
+
+    <div class="scaleWrapper scaleCount-{{scales.length}}">
+
+        <div class="scaleGroup" ng-repeat="group in groups">
+
+            <div class="scaleContainer"
+                 ng-repeat="scale in group"
+                 ng-class="{'active': scale.ID == currentScaleID && scale.isInfoLoaded, 'failure': scale.ALARM}"
+                 ng-click="selectCurrentSides(scale.ID)">
+
+                <label>{{scale.Description}}</label>
+
+                <span class="failureMsg" ng-show="scale.ALARM">
+                    {{ 'marker.failure' | translate }}
+                </span>
+
+                <div ng-show="!scale.ALARM">
+                   
+                    <div class="plotArea"
+                         id="plot-{{scale.ID}}">
+                    </div>
+
+                    <div ng-show="!scale.isInfoLoaded" style="line-height: 6;">
+                        {{ 'loadingMsg' | translate }}
+                    </div>
+
+                    <div ng-show="scale.isInfoLoaded" style="margin-top: -30px;">
+                        
+                        <h3 ng-show="scale.weightCurrent >=0">
+                            {{scale.weightCurrent}} {{ 'marker.kg' | translate }}
+                        </h3>
+                        <h4 ng-show="scale.rodsQuantity > 0">
+                            {{scale.rodsQuantity}} {{ 'marker.pcs' | translate }}
+                        </h4>
+                    </div>
+
+                    <i class="circle" ng-class="{'red': scale.POCKET_LOC, 'green': !scale.POCKET_LOC}"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="scaleDetailInfo" ng-show="currentScaleID && !scalesDetailsInfo.ALARM">
+
+    <div class="scaleInfo task">
+        <h4 class="labelTask">{{ 'marker.task' | translate }}</h4>
+
+        <div class="section">
+
+            <div class="sectionItem">
+                <label>{{ 'marker.order' | translate }}:</label>
+                <input type="text" class="input-small form-control"
+                       ng-change="checkIsAcceptedOrder()"
+                       ng-model="commOrder"
+                       ng-disabled="!standard"
+                       my-enter="buildForm()" />
+            </div>
+
+            <div class="sectionItem">
+                <label>{{ 'marker.brigadeNo' | translate }}:</label>
+                <input type="text" class="input-small form-control"
+                       readonly
+                       ng-model="brigadeNo" />
+            </div>
+
+            <div class="sectionItem">
+                <label>{{ 'marker.date' | translate }}</label>
+                <input type="text" class="input-small form-control"
+                       readonly
+                       ng-model="prodDate" />
+            </div>
+
+        </div>
+
+        <div class="controlsWrapper">
+            <div class="controlsGroup"
+                 ng-show="scalesDetailsInfo.SCALES_TYPE == 'POCKET' || scalesDetailsInfo.SCALES_TYPE == 'LINEPACK'">
+
+                <div class="controlsRow">
+                    <div class="captionTask">
+                        {{ 'marker.profile' | translate }}
+                    </div>
+                    <div class="controlTask">
+                       
+                        <dropdown iterator="profiles"
+                                 model="selectedProfile"
+                                 description="selectedProfileDescription"
+                                 wrong-expr="!selectedProfile && standard"
+                                 method-on-click="actionsProfileChanged"
+                                 show-disable-div="true"
+                                 standard="standard">
+
+                        </dropdown>
+                    </div>
+                </div>
+
+                <div class="controlsRow">
+                    <div class="captionTask">{{ 'marker.size' | translate }}</div>
+                    <div class="controlTask">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="length"
+                               ng-disabled="!standard"
+                               ng-change="calculate()" />
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <div class="controlsGroup" style="padding:0 0 0 10px;"
+                 ng-show="scalesDetailsInfo.SCALES_TYPE == 'POCKET'">
+
+                <div>
+                    <input type="checkbox"
+                           ng-model="sandwichMode"
+                           ng-disabled="!standard"
+                           ng-change="enableControlOK();" />
+                    {{ 'marker.sandwich' | translate }}
+                </div>
+                <div>
+
+                    <input type="checkbox"
+                           ng-model="autoMode"
+                           ng-checked="autoMode"
+                           ng-disabled="!standard"
+                           ng-change="enableControlOK()" />
+                    {{ 'marker.byAccept' | translate }}
+                </div>
+                <div>
+                    <input type="checkbox"
+                           ng-model="nemera"
+                           ng-disabled="!standard"
+                           ng-change="enableControlOK()" />
+                    {{ 'marker.nemera' | translate }}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="controlsWrapper"
+             ng-show="scalesDetailsInfo.SCALES_TYPE == 'POCKET' ||
+                      scalesDetailsInfo.SCALES_TYPE == 'LINEPACK'">
+            <div class="controlsGroup">
+                <div class="controlsRow">
+                    <div class="captionTask">{{ 'marker.rodsQuantityPcs' | translate }}</div>
+                    <div class="controlTask">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="barQuantity"
+                               ng-disabled="!standard"
+                               ng-change="calculate()" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="controlsGroup">
+                <div class="controlsRow">
+                    <div class="captionTask">
+                        {{ 'marker.minMassRec' | translate }}
+                    </div>
+                    <div class="controlTask">
+                        <input type="text"
+                               class="form-control"
+                               readonly
+                               ng-model="minMassRec" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="controlsWrapper">
+
+            <div class="controlsGroup">
+                <div class="controlsRow" ng-hide="scalesDetailsInfo.SCALES_TYPE == 'MANUAL'">
+                    <div class="captionTask">
+                        {{ 'marker.minMass' | translate }}
+                    </div>
+                    <div class="controlTask">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="minMass"
+                               ng-disabled="!standard"
+                               ng-class="{'wrong': !minMass && standard}"
+                               my-number-check
+                               ng-change="enableControlOK(); calculateMaxMass()" />
+                    </div>
+                </div>
+
+                <div class="controlsRow"
+                     ng-show="scalesDetailsInfo.SCALES_TYPE == 'POCKET' ||
+                              scalesDetailsInfo.SCALES_TYPE == 'LINEPACK'">
+                    <div class="captionTask">
+                        {{ 'marker.sampleMass' | translate }}
+                    </div>
+                    <div class="controlTask">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="sampleMass"
+                               ng-disabled="!standard"
+                               ng-change="calculate()" />
+                    </div>
+                </div>
+
+                <div class="controlsRow"
+                     ng-show="scalesDetailsInfo.SCALES_TYPE == 'POCKET' ||
+                              scalesDetailsInfo.SCALES_TYPE == 'LINEPACK'">
+                    <div class="captionTask">
+                        {{ 'marker.sampleLength' | translate }}
+                    </div>
+                    <div class="controlTask">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="sampleLength"
+                               ng-disabled="!standard"
+                               ng-change="calculate()" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="controlsGroup">
+
+                <div class="controlsRow" ng-hide="scalesDetailsInfo.SCALES_TYPE == 'MANUAL'">
+                    <div class="captionTask">
+                        {{ 'marker.maxMass' | translate }}
+                    </div>
+                    <div class="controlTask">
+                        <input type="text"
+                               class="form-control"
+                               ng-model="maxMass"
+                               ng-class="{'wrong': !maxMass && standard}"
+                               ng-disabled="!standard"
+                               my-number-check
+                               ng-change="enableControlOK();" />
+                    </div>
+                </div>
+
+                <div class="controlsRow"
+                     ng-show="scalesDetailsInfo.SCALES_TYPE == 'POCKET' ||
+                              scalesDetailsInfo.SCALES_TYPE == 'LINEPACK'">
+                    <div class="captionTask">
+                        {{ 'marker.rodsWeight' | translate }}
+                    </div>
+                    <div class="controlTask">
+                        <input type="text"
+                               class="form-control"
+                               readonly ng-model="barWeight" />
+                    </div>
+                </div>
+
+                <div class="controlsRow"
+                     ng-show="scalesDetailsInfo.SCALES_TYPE == 'POCKET' ||
+                              scalesDetailsInfo.SCALES_TYPE == 'LINEPACK'">
+                    <div class="captionTask">
+                        {{ 'marker.deviation' | translate }}
+                    </div>
+                    <div class="controlTask">
+                        <input type="text" readonly
+                               class="form-control"
+                               ng-model="deviation"
+                               ng-class="{'wrong': deviationState == 'wrong'}" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="controlsWrapper" style="margin-top:40px;" ng-show="scalesDetailsInfo.SCALES_TYPE == 'BUNT'
+                && scalesDetailsInfo.PACK_RULE == 'CALC'">
+            <div class="controlsGroup">
+
+                <div class="controlsRow">
+                    <div class="captionTask">
+                        {{ 'marker.bindingDia' | translate }}
+                    </div>
+                    <div class="controlTask">
+
+                        <dropdown iterator="BindingDiaData"
+                                  model="BindingDia"
+                                  description="BindingDiaDataValue"
+                                  wrong-expr="!bindingDia && standard"
+                                  method-on-click="changeBindingDiaData"
+                                  show-disable-div="true"
+                                  standard="standard">
+
+                        </dropdown>
+                    </div>
+                </div>
+
+                    
+            </div>
+
+            <div class="controlsGroup">
+
+                <div class="controlsRow">
+                    <div class="captionTask">
+                        {{ 'marker.bindingQty' | translate }}
+                    </div>
+                    <div class="controlTask">
+
+                        <dropdown iterator="BindingQtyData"
+                                  model="bindingQty"
+                                  description="BindingQtyDataValue"
+                                  wrong-expr="!bindingQty && standard"
+                                  method-on-click="changeBindingQtyData"
+                                  show-disable-div="true"
+                                  standard="standard">
+
+                        </dropdown>
+                    </div>
+                </div>
+
+                
+            </div>
+
+        </div>        
+
+        <div class="controls">
+            <button type="button"
+                    class="btn btn-default"
+                    ng-show="scalesDetailsInfo.SCALES_TYPE != 'MANUAL'"
+                    ng-disabled="disableButtonOKTask"
+                    ng-click="workRequest()">
+                {{OKLabel}}
+            </button>
+        </div>
+
+    </div>
+
+    <div class="scaleInfo">
+
+        <h4 class="scalesName">{{scalesDetailsInfo.ScalesName}}</h4>
+        <span class="autoManuMsg" ng-show="scalesDetailsInfo && scalesDetailsInfo.AUTO_MANU && scalesDetailsInfo.SCALES_TYPE != 'MANUAL'">
+            {{ 'marker.autoMode' | translate }}
+        </span>
+
+        <span class="autoManuMsg" ng-show="scalesDetailsInfo && !scalesDetailsInfo.AUTO_MANU && scalesDetailsInfo.SCALES_TYPE != 'MANUAL'">
+            {{ 'marker.byAccept' | translate }}
+        </span>
+
+        <p class="msgRed" ng-show="scalesDetailsInfo.weightCurrent > scalesDetailsInfo.MaxWeight">
+            {{'marker.weightOver' | translate}}
+        </p>
+
+        <p>
+            <span class="msgRed"
+                  ng-show="scalesDetailsInfo.POCKET_LOC && scalesDetailsInfo.SCALES_TYPE != 'MANUAL'">
+                {{ 'marker.scalesBlocked' | translate }}
+            </span>
+            <span ng-show="sandwichMode && scalesDetailsInfo && !scalesDetailsInfo.PACK_SANDWICH && scalesDetailsInfo.SCALES_TYPE != 'MANUAL'">
+                {{ 'marker.firstPack' | translate }}
+            </span>
+            <span ng-show="sandwichMode && scalesDetailsInfo.PACK_SANDWICH && scalesDetailsInfo.SCALES_TYPE != 'MANUAL'">
+                {{ 'marker.secondPack' | translate }}
+            </span>
+        </p>
+
+        <p class="scaleInfoContainer" ng-hide="scalesDetailsInfo.SCALES_TYPE == 'MANUAL'">
+            <span class="description">{{ 'marker.weight' | translate }}:</span>
+            <span class="value scalesValue" ng-show="scalesDetailsInfo.weightCurrent >=0">
+                {{scalesDetailsInfo.weightCurrent}} {{ 'marker.kg' | translate }}
+            </span>
+        </p>
+
+        <p class="scaleInfoContainer" ng-hide="scalesDetailsInfo.SCALES_TYPE == 'MANUAL'">
+            <span class="description">{{ 'marker.rodsQuantity' | translate }}:</span>
+
+            <span class="value rodsValue" ng-show="scalesDetailsInfo.RodsQuantity && scalesDetailsInfo.RodsQuantity > 0">
+                {{scalesDetailsInfo.RodsQuantity}} {{ 'marker.pcs' | translate }}
+            </span>
+        </p>
+
+        <p class="scaleInfoContainer" ng-hide="scalesDetailsInfo.SCALES_TYPE == 'MANUAL'">
+            <span class="description">{{ 'marker.rodsLeft' | translate }}:</span>
+            <span class="value rodsValue" ng-show="rodsLeft != null">
+                <span ng-show="rodsLeft > 0">+</span>
+                {{rodsLeft}} {{ 'marker.pcs' | translate }}
+            </span>
+        </p>
+
+        <div class="isStableScalesIndicator"
+                ng-show="scalesDetailsInfo.WEIGHT_STAB && scalesDetailsInfo.SCALES_TYPE != 'MANUAL'">
+        </div>
+
+        <span class="weightZeroIndicator"
+                ng-show="scalesDetailsInfo.WEIGHT_ZERO && scalesDetailsInfo.SCALES_TYPE != 'MANUAL'">>0<</span>
+        
+        <div class="controls">
+
+            <button type="button"
+                    class="btn btn-default"
+                    ng-show="scalesDetailsInfo.SCALES_TYPE != 'MANUAL'"
+                    ng-disabled="!(
+                    (!sandwichModeAccepted && (!scalesDetailsInfo.AUTO_MANU) && scalesDetailsInfo.WEIGHT_STAB && scalesDetailsInfo.TAKE_WEIGHT_LOCKED!='1')
+                    ||
+                    (sandwichModeAccepted && scalesDetailsInfo.PACK_SANDWICH && (!scalesDetailsInfo.AUTO_MANU) && scalesDetailsInfo.WEIGHT_STAB && scalesDetailsInfo.TAKE_WEIGHT_LOCKED!='0'))"
+                    ng-click="doAction('ins_JobOrderOPCCommandTakeWeight','takeWeightLabel', 'marker.takeWeightButton')">
+                {{takeWeightLabel}}
+            </button>
+
+            <button type="button"
+                    class="btn btn-default"
+                    ng-show="sandwichModeAccepted && scalesDetailsInfo.SCALES_TYPE != 'MANUAL'"
+                    ng-disabled="!((scalesDetailsInfo && !scalesDetailsInfo.PACK_SANDWICH) && (!scalesDetailsInfo.AUTO_MANU) && scalesDetailsInfo.WEIGHT_STAB)"
+                    ng-click="doAction('ins_JobOrderOPCCommandTakeTara','takeTaraLabel', 'marker.takeTaraButton')">
+                {{takeTaraLabel}}
+            </button>
+
+            <button type="button"
+                    class="btn btn-default"
+                    ng-show="scalesDetailsInfo.SCALES_TYPE != 'MANUAL'"
+                    ng-click="doAction('ins_MaterialLotByEquipment', 'testPrintLabel', 'marker.testPrintButton')">
+                {{testPrintLabel}}
+            </button>
+
+            <button type="button"
+                    class="btn btn-default specialLabelMode"
+                    ng-show="userMetadata.indexOf('ins_ManualWeightEntry') > -1"
+                    ng-click="showBuildFormWindow('toggleModalHandMode', 'handMode')">
+                {{ 'marker.handModeButton' | translate }}
+            </button>
+        </div>
+
+    </div>
+
+    <div class="scaleInfo">
+
+        
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showBuildFormWindow('toggleModalMarker', 'reMarkerMode')"
+                ng-class="{'active': reMarkerMode}"
+                ng-disabled="!standard">
+            {{ 'marker.remarkingButton' | translate }}
+        </button>
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showBuildFormWindow('toggleModalSort', 'sortingMode')"
+                ng-class="{'active': sortingMode}"
+                ng-disabled="!standard && !sortingMode">
+            {{ 'marker.sortingButton' | translate }}
+        </button>
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showBuildFormWindow('toggleModalReject', 'rejectMode')"
+                ng-class="{'active': rejectMode}"
+                ng-disabled="!standard && !rejectMode">
+            {{ 'marker.rejectButton' | translate }}
+        </button>
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showBuildFormWindow('toggleModalSeparate', 'separateMode')"
+                ng-class="{'active': separateMode}"
+                ng-disabled="!standard && !separateMode">
+            {{ 'marker.separateButton' | translate }}
+        </button>
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showOrderChangeModal()"
+                ng-disabled="!standard">
+            {{ 'marker.changeOrderButton' | translate }}
+        </button>
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showOuterPage('app.Marker.Monitor')">
+            {{'marker.monitor' | translate}}
+        </button>
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showOuterPage('app.Marker.Diagnostics')">
+            {{'pa.Diagnostics' | translate}}
+        </button>
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showOuterPage('app.Marker.Charts')">
+            {{'marker.charts' | translate}}
+        </button>
+
+        <button type="button"
+                class="btn btn-default specialLabelMode"
+                ng-click="showOuterPage('app.Marker.Statistics')">
+            {{'marker.statisticsButton' | translate}}
+        </button>
+
+    </div>
+
+</div>
+
+<div class="black-wrapper" ng-show="isShowModal">
+    <div class="modal additional">
+
+        <h4>{{ 'marker.modalCaptions.order' | translate }}</h4>
+
+        <div class="formWrapper">
+            <form id="orderForm" novalidate></form>
+        </div>
+
+    </div>
+</div>
+
+<div class="black-wrapper" ng-show="toggleModalMarker">
+    <div class="modal additional">
+        <button type="button"
+                ng-click="closeModal('toggleModalMarker');
+                actionsOnExit('remarkerForm', 'isShowReMarkForm');"
+                class="btn btn-circle pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
+        <h4>{{ 'marker.modalCaptions.reMarkingMode' | translate }}</h4>
+
+        <div class="enterLabelWrapper">
+            <label>{{ 'marker.modalCaptions.enterLabelNumber' | translate }}</label>
+            <input type="text" class="labelNumber form-control"
+                   ng-model="labelNumber"
+                   ng-readonly="readOnly" my-enter="buildFormSpecialMode('remarkerForm', 'isShowReMarkForm')" />
+        </div>
+
+
+        <div class="formWrapper" ng-show="isShowReMarkForm">
+            <form id="remarkerForm" novalidate></form>
+        </div>
+    </div>
+</div>
+
+<div class="black-wrapper" ng-show="toggleModalSort">
+    <div class="modal additional">
+        <button type="button"
+                ng-click="closeModal('toggleModalSort');
+                actionsOnExit('sortingForm', 'isShowSortingForm');"
+                class="btn btn-circle pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
+        <h4>{{ 'marker.modalCaptions.reSortingMode' | translate }}</h4>
+
+        <div class="enterLabelWrapper">
+            <label>{{ 'marker.modalCaptions.enterLabelNumber' | translate }}</label>
+            <input type="text" class="labelNumber form-control"
+                   ng-model="labelNumber"
+                   ng-readonly="readOnly" my-enter="buildFormSpecialMode('sortingForm', 'isShowSortingForm')" />
+        </div>
+
+
+        <div class="formWrapper" ng-show="isShowSortingForm">
+            <form id="sortingForm" novalidate></form>
+        </div>
+    </div>
+</div>
+
+<div class="black-wrapper" ng-show="toggleModalReject">
+    <div class="modal additional">
+        <button type="button"
+                ng-click="closeModal('toggleModalReject');
+                actionsOnExit('rejectForm', 'isShowRejectForm');"
+                class="btn btn-circle pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
+        <h4>{{ 'marker.modalCaptions.RejectMode' | translate }}</h4>
+
+        <div class="enterLabelWrapper">
+            <label>{{ 'marker.modalCaptions.enterLabelNumber' | translate }}</label>
+            <input type="text" class="labelNumber form-control"
+                   ng-model="labelNumber"
+                   ng-readonly="readOnly" my-enter="buildFormSpecialMode('rejectForm', 'isShowRejectForm')" />
+        </div>
+
+
+        <div class="formWrapper" ng-show="isShowRejectForm">
+            <form id="rejectForm" novalidate></form>
+        </div>
+    </div>
+</div>
+
+<div class="black-wrapper" ng-show="toggleModalSeparate">
+    <div class="modal additional">
+        <button type="button"
+                ng-click="closeModal('toggleModalSeparate');
+                actionsOnExit('separateForm', 'isShowSeparateForm');"
+                class="btn btn-circle pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
+        <h4>{{ 'marker.modalCaptions.SeparateMode' | translate }}</h4>
+
+        <div class="enterLabelWrapper">
+            <label>{{ 'marker.modalCaptions.enterLabelNumber' | translate }}</label>
+            <input type="text" class="labelNumber form-control"
+                   ng-model="labelNumber"
+                   ng-readonly="readOnly" my-enter="buildFormSpecialMode('separateForm', 'isShowSeparateForm')" />
+        </div>
+
+        <div class="enterLabelWrapper">
+            <label>{{ 'marker.modalCaptions.changePackNumber' | translate }}</label>
+
+                <dropdown iterator="packs"
+                          model="packsLeft"
+                          description="2"                         
+                          show-disable-div="false"
+                          >
+
+                </dropdown>
+                       
+        </div>
+
+
+        <div class="formWrapper" ng-show="isShowSeparateForm">
+            <form id="separateForm" novalidate></form>
+        </div>
+    </div>
+</div>
+
+<div class="black-wrapper" ng-show="toggleModalHandMode">
+    <div class="modal additional">
+        <button type="button"
+                ng-click="toggleModalHandMode = false"
+                class="btn btn-circle pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+
+        <h4>{{ 'marker.modalCaptions.HandMode' | translate }}</h4>
+
+        <div class="enterLabelWrapper">
+            <label>{{ 'marker.modalCaptions.enterQuantity' | translate }}:</label>
+            <input type="text"
+                   class="labelNumber form-control"
+                   my-number-check
+                   ng-class="{'wrong': noHandModeQuantity}"
+                   ng-model="handModeQuantity"
+                   ng-change="noHandModeQuantity = false" />
+
+        </div>
+
+        <div class="control-row">
+
+            <button type="button"
+                    class="btn btn-default" 
+                    ng-click="acceptHandMode()">
+                OK
+            </button>
+
+            <button type="button"
+                    class="btn btn-default" 
+                    ng-click="cancelHandMode()">
+                {{ 'buttonCancel' | translate }}
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<div class="black-wrapper" ng-show="toggleModalOrderChange">
+    <div class="modal additional">
+
+        <h4>{{ 'marker.modalCaptions.OrderChangeMode' | translate }}</h4>
+
+        <div class="enterLabelWrapper">
+            <label>{{ 'marker.modalCaptions.enterNewOrder' | translate }}:</label>
+            <input type="text"
+                   class="form-control"
+                   ng-model="NewOrderNumber"
+                   ng-class="{'wrong': noNewOrderNumber}"
+                   ng-change="noNewOrderNumber = false" />
+        </div>
+
+        <div class="formWrapper" style="margin: 10px 0 0 13px;">
+
+            <p>{{'marker.grid.selected' | translate}}:</p>
+
+            <div id="changeOrderGrid">
+
+            </div>
+        </div>
+
+        <div class="control-row">
+            <button type="button"
+                    class="btn btn-default" 
+                    ng-click="acceptOrderChange()">OK</button>
+            <button type="button"
+                    class="btn btn-default" 
+                    ng-click="cancelOrderChange()">{{ 'marker.buttonExit' | translate }}</button>
+        </div>
+
+    </div>
+</div>
+
+<div style="position:fixed; top:0; left:0; width: 100%; height: 100%; z-index:10;"
+     class="container loading"
+     ng-show="definitionPropertiesLoading">
+
+    <div class="loading-msg">
+        <h3>{{ 'loadingMsg' | translate }}</h3>
+    </div>
+
+</div>
+
+
+
+
+
+
