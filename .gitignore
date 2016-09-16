@@ -1,6 +1,7 @@
 ﻿*.log
 *~
 *.map
+.idea
 
 node-errno
 

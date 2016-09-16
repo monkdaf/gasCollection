@@ -52,56 +52,18 @@
 <link href="Content/Shared/layout.css" rel="stylesheet"  />
 <link href="Content/Chart/jquery.jqplot.css" rel="stylesheet"  />
 
+    <script src="Scripts/App/gasCollection.js"></script>
+    <script src="Scripts/App/indexDaf.js"></script>
 </head>
-<!--- <script src="js/main.js"></script> --->
-<body>
-<section ng-app="indexApp">
-       
-        <ui-view>
-
-            <div class="container">
-                <div class="container loading">
-                    <div class="loading-msg">
-                        <h1>Loading ...</h1>
-                    </div>
-                </div>
-            </div>
-
-        </ui-view>
-              
-    </section>
-<!--
+<body ng-app="indexAppDaf">
 <ul class="nav nav-tabs">
     <li class="tab" ui-sref-active="active">
-        <a ui-sref=".Label" ui-sref-opts="{reload: true}">{{ 'pa.Label' | translate }}</a>
+        <a ui-sref="reports" ui-sref-opts="{reload: true}" ui-sref-active="active">Reports</a>
     </li>
-
     <li class="tab" ui-sref-active="active">
-        <a ui-sref=".DayFlow" ui-sref-opts="{reload: true}">{{ 'gasCollection.DayFlow' | translate }}</a>
+        <a ui-sref="trends" ui-sref-active="active">Trends</a>
     </li>
-
-    <li class="tab" ui-sref-active="active">
-        <a ui-sref=".DayAll" ui-sref-opts="{reload: true}">{{ 'gasCollection.DayAll' | translate }}</a>
-    </li>
-
-    <li class="tab" ui-sref-active="active">
-        <a ui-sref=".MonthFlow" ui-sref-opts="{reload: true}">{{ 'gasCollection.MonthFlow' | translate }}</a>
-    </li>
-
-    <li class="tab" ui-sref-active="active">
-        <a ui-sref=".MonthAll" ui-sref-opts="{reload: true}">{{ 'gasCollection.MonthAll' | translate }}</a>
-    </li>
-
-    <li class="tab" ui-sref-active="active">
-        <a ui-sref=".YearFlow" ui-sref-opts="{reload: true}">{{ 'gasCollection.YearFlow' | translate }}</a>
-    </li>
-
-    <li class="tab" ui-sref-active="active">
-        <a ui-sref=".YearAll" ui-sref-opts="{reload: true}">{{ 'gasCollection.YearAll' | translate }}</a>
-    </li>
-
-
 </ul>
---->
+<ui-view></ui-view>
 </body>
 </html>

@@ -1,4 +1,5 @@
-﻿angular.module('indexApp')
+﻿// angular.module('indexApp')
+angular.module('indexAppDaf')
 
 app.controller('gasCollectionCtrl', ['$scope', 'indexService', '$state', 'roles', function ($scope, indexService, $state, roles) {
 
