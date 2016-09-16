@@ -58,11 +58,15 @@
 <body ng-app="indexAppDaf">
 <ul class="nav nav-tabs">
     <li class="tab" ui-sref-active="active">
+        <a ui-sref="gasCollection" ui-sref-opts="{reload: true}" ui-sref-active="active">app_gasCollection</a>
+    </li>
+
+<!--    <li class="tab" ui-sref-active="active">
         <a ui-sref="reports" ui-sref-opts="{reload: true}" ui-sref-active="active">Reports</a>
     </li>
     <li class="tab" ui-sref-active="active">
         <a ui-sref="trends" ui-sref-active="active">Trends</a>
-    </li>
+    </li>-->
 </ul>
 <ui-view></ui-view>
 </body>
