@@ -7,6 +7,7 @@ angular.module('indexAppDaf')
       .state({
         name: 'gasCollection.reports',
         url: '/reports',
+        controller: 'gasCollectionReportsCtrl',
         //template: '<h3>It is area for reports</h3>'
         templateUrl: 'Static/gascollection/reports.html'
       })
@@ -19,7 +20,11 @@ angular.module('indexAppDaf')
       });
   }])
 
-.controller('gasCollectionCtrl', ['$scope', 'indexService', '$state', 'roles', function ($scope, indexService, $state, roles) {
-  // $scope.mytexts = "OKI-DOKI";
-  // console.log(`$scope.mytexts=${$scope.mytexts}`);
-}]);
+  .controller('gasCollectionCtrl', ['$scope', 'indexService', '$state', 'roles', function ($scope, indexService, $state, roles) {
+
+  }])
+
+  .controller('gasCollectionReportsCtrl', ['$scope', '$state', function ($scope, $state) {
+    $scope.mytexts = "OKI-DOKI";
+    console.log(`$scope.mytexts=${$scope.mytexts}`);
+  }]);
