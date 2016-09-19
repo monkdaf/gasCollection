@@ -52,21 +52,15 @@
 <link href="Content/Shared/layout.css" rel="stylesheet"  />
 <link href="Content/Chart/jquery.jqplot.css" rel="stylesheet"  />
 
-    <script src="Scripts/App/gasCollection.js"></script>
     <script src="Scripts/App/indexDaf.js"></script>
+    <script src="Scripts/App/gasCollection.js"></script>
+
 </head>
 <body ng-app="indexAppDaf">
 <ul class="nav nav-tabs">
     <li class="tab" ui-sref-active="active">
         <a ui-sref="gasCollection" ui-sref-opts="{reload: true}" ui-sref-active="active">app_gasCollection</a>
     </li>
-
-<!--    <li class="tab" ui-sref-active="active">
-        <a ui-sref="reports" ui-sref-opts="{reload: true}" ui-sref-active="active">Reports</a>
-    </li>
-    <li class="tab" ui-sref-active="active">
-        <a ui-sref="trends" ui-sref-active="active">Trends</a>
-    </li>-->
 </ul>
 <ui-view></ui-view>
 </body>

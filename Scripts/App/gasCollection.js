@@ -3,16 +3,6 @@ angular.module('indexAppDaf')
 
   .config(['$stateProvider', function ($stateProvider) {
     $stateProvider
-      // .state('gasCollection', {
-      //   url: '/gascollection',
-      //   templateUrl: 'Static/gascollection/index.html',
-      //   controller: 'gasCollectionCtrl',
-      //   // onEnter: function ($state, roles) {
-      //   //
-      //   //   if (!vmIsAuthorized('gasCollection', roles))
-      //   //     $state.go('app.error', { code: 'unauthorized' });
-      //   // }
-      // })
 
       .state({
         name: 'gasCollection.reports',
@@ -27,12 +17,9 @@ angular.module('indexAppDaf')
         // template: '<h3>It is area for trends</h3>'
         templateUrl: 'Static/gascollection/trends.html'
       });
-
   }])
 
 .controller('gasCollectionCtrl', ['$scope', 'indexService', '$state', 'roles', function ($scope, indexService, $state, roles) {
-
-
-    
-
+  // $scope.mytexts = "OKI-DOKI";
+  // console.log(`$scope.mytexts=${$scope.mytexts}`);
 }]);
