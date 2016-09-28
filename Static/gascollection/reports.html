@@ -1,7 +1,7 @@
 <!--<table class="table table-striped">-->
 <!--<h2>!!!{{mytexts}}!!!</h2>-->
 <div>
-    <input type="checkbox" ng-model="showFullData" />showFullData<br />
+    <input type="checkbox" ng-model="showFullData" />Показывать все данные<br />
 </div>
 
 <table class="table table-striped table-condensed text-center">
@@ -9,11 +9,17 @@
   <thead>
    <tr>
     <th>Время</th>
+    <th ng-if="showFullData">Давление (среднее за час)</th>
+    <th ng-if="showFullData">Температура (средняя за час)</th>
+    <th ng-if="showFullData">Концентрация (средняя за час)</th>
     <th>Потребление за час</th>
     <th>Суммарное потребление</th>
    </tr>
    <tr>
     <th>&nbsp;</th>
+    <th ng-if="showFullData">PE1.1</th>
+    <th ng-if="showFullData">TE1.1</th>
+    <th ng-if="showFullData">QE1.1</th>
     <th>FE1.1</th>
     <th>сумма FE1.1</th>
    </tr>
@@ -21,11 +27,14 @@
   <tbody>
   <tr ng-repeat="data in dataDaily">
       <td>{{data.datetime}}</td>
+      <td ng-if="showFullData">{{data.valPE}}</td>
+      <td ng-if="showFullData">{{data.valTE}}</td>
+      <td ng-if="showFullData">{{data.valQE}}</td>
       <td>{{data.val}}</td>
       <td>{{data.sumVal}}</td>
   </tr>
 </table>
-<table class="table table-striped table-condensed text-center" ng-if="showFullData">
+<!--<table class="table table-striped table-condensed text-center" ng-if="showFullData">
     <caption>Тест большой таблицы</caption>
     <thead>
 
@@ -107,7 +116,7 @@
         <td>{{data.val}}</td>
         <td>{{data.sumVal}}</td>
     </tr>
-</table>
+</table>-->
 <!--</tbody>
   <tr><td>01:00</td><td>105</td><td>105</td></tr>
   <tr><td>02:00</td><td>120</td><td>225 </td></tr>
