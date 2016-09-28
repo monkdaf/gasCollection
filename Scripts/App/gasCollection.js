@@ -25,10 +25,9 @@ angular.module('indexAppDaf')
   }])
 
   .controller('gasCollectionReportsCtrl', ['$scope', '$state', function ($scope, $state) {
-    // $scope.mytexts = "OKI-DOKI";
-    // console.log(`$scope.mytexts=${$scope.mytexts}`);
+    $scope.showFullData = true;
     $scope.dataDaily = [
-      {datetime: '01:10', val: 105, sumVal: 105 },
+      {datetime: '01:00', val: 105, sumVal: 105 },
       {datetime: '02:00', val: 120, sumVal: 225 },
       {datetime: '03:00', val: 101, sumVal: 326 },
       {datetime: '04:00', val: 93, sumVal:  419 },
