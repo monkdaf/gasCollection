@@ -110,6 +110,10 @@ angular.module('indexAppDaf')
       {datetime: '12', valPE: 8.1 ,  valTE: 19,  valQE: 0.73,  val: 98, sumVal:  1186 }
     ];
 
+
+    $scope.dataGasCollection = gasCollectionTableData();
+    $scope.dataDaily = gasCollectionTableData();
+
     $scope.data = {
       dataset0: [
         {x: 0, val_0: 0, val_1: 0, val_2: 0, val_3: 0},
@@ -138,3 +142,5 @@ angular.module('indexAppDaf')
       axes: {x: {key: "x"}}
     };
   }]);
+
+
