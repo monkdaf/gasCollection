@@ -6,11 +6,19 @@
     <select ng-model="typeOfReport.selected"
             ng-options="item.description for item in typeOfReport track by item.id"></select>
 </div>
+
+<div>
+    Выберите точку отбора :
+    <select ng-model="equipmentlist.selected"
+            ng-options="item.description for item in equipmentlist track by item.id"></select>
+</div>
+
 <div>
     <input type="checkbox" ng-model="showFullData"/> отображать полные данные
 </div>
 
-<div>{{dataGasCollection}}</div>
+<!--<div>{{dataGasCollection}}</div>-->
+<!--<div>{{equipmentlist}}</div>-->
 <!--
 <div>{{data}}</div>
 <div>{{data}}</div>

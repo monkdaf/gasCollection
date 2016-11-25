@@ -36,7 +36,10 @@ function gasCollectionTableData() {
   const gasColectionRawData = getGasCollectionData();
   let gasCollectionArray = [];
   gasCollectionArray = gasColectionRawData.value.map(function (curr) {
-    return ({datetime: curr.dtStart,
+    const myDateTime = Date.parse(curr.dtStart);
+    //const stringDateTime = dateTime.getFullYear();
+    return ({
+      datetime: curr.dtStart, //"2016-11-21T09:00:00+02:00",
       valPE: curr.PE,
       valTE: curr.TE,
       valQE: curr.QE,
@@ -45,4 +48,41 @@ function gasCollectionTableData() {
     });
   });
   return gasCollectionArray; //gasColectionRawData.value; //gasColectionRawData.value;
+}
+
+function getEquipmentList() {
+  return [
+    {description: "Азот от ЛиндеГаз (контора газового цеха)", id: 10010},
+    {description: "Азот на входе в ККЦ в АРП", id: 10016},
+    {description: "Кислород от ЛиндеГаз на ККЦ №1", id: 10022},
+    {description: "Кислород от ЛиндеГаз на ККЦ №2", id: 10028},
+    {description: "Кислород КРП №1 ККЦ", id: 10034},
+    {description: "Кислород КРП №2 ККЦ", id: 10040},
+    {description: "Кислород на входе ТЭЦ-1 (2а,5)", id: 10046},
+    {description: "Кислород на входе ТВД-2а в ТЭЦ-1", id: 10052},
+    {description: "Кислород на входе ТВД-8бис в ТЭЦ-1", id: 10062},
+    {description: "Кислород на входе ТЭЦ-2", id: 10071},
+    {description: "Кислород на входе ТВД-9 в ТЭЦ-2", id: 10077},
+    {description: "Кислород на входе ТВД-11 в ТЭЦ-2", id: 10087},
+    {description: "Азот на входе в ДП-9", id: 10095},
+    {description: "Азот на входе в ДП-9 №2", id: 10101},
+    {description: "Кислород на входе ТЭЦ-3", id: 10107},
+    {description: "Воздух на ЦЛС-1 и пр.", id: 10113},
+    {description: "Воздух на ЦЛС-2 и пр.", id: 10117},
+    {description: "Воздух на ЦРВ-1 и пр.", id: 10121},
+    {description: "Кислород на ТЭЦ-3", id: 10125},
+    {description: "Кислород на коллектор ККЦ-1", id: 10131},
+    {description: "Кислород на коллектор ККЦ-2", id: 10137},
+    {description: "Кислород на мартен", id: 10143},
+    {description: "Кислород  в цех компрессии №1 (PE 3.14)", id: 10148},
+    {description: "Кислород в цех компрессии №1 (PE 3.15)", id: 10149},
+    {description: "Кислород на ТЭЦ-1", id: 10150},
+    {description: "Кислород на ТЭЦ 1,2", id: 10156},
+    {description: "Кислород ЦРВ-КАр-30 №6", id: 10162},
+    {description: "Кислород ЦРВ-КАр-30М1 №7", id: 10168},
+    {description: "Кислород ЦРВ-КАр-30 №8", id: 10174},
+    {description: "Кислород ЦРВ-АКАр-40/35 №2", id: 10180},
+    {description: "Кислород низкого давления от ЛиндеГаз", id: 10197},
+    {description: "Азот от ЛиндеГаз", id: 10202}
+  ]
 }

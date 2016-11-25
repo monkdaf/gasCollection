@@ -32,6 +32,9 @@ angular.module('indexAppDaf')
     ];
     $scope.typeOfReport.selected = $scope.typeOfReport[0];
 
+    $scope.equipmentlist = getEquipmentList();
+    $scope.equipmentlist.selected = $scope.equipmentlist[0];
+
     $scope.showFullData = false;
 
     $scope.dataDaily = [
@@ -112,6 +115,7 @@ angular.module('indexAppDaf')
 
 
     $scope.dataGasCollection = gasCollectionTableData();
+    $scope.dataGasCollection = getGasCollectionData();
     $scope.dataDaily = gasCollectionTableData();
 
     $scope.data = {
