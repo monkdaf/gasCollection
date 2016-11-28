@@ -33,68 +33,115 @@
     <favorites_list name="gasCollection" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gasCollection.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/App/gasCollection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
-              <folding>
-                <element signature="e#845#1002#0" expanded="false" />
-                <element signature="e#1230#3389#0" expanded="false" />
-                <element signature="e#3415#6104#0" expanded="false" />
-                <element signature="e#6129#7178#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gasCollectionUtils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/Shared/gasCollectionUtils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-              <folding>
-                <element signature="n#!!doc;n#getGasCollectionData#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reports.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Static/gascollection/reports.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#4372#6813#1" expanded="false" />
-                <element signature="e#6814#8052#1" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="indexDaf.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripts/App/indexDaf.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="111" selection-start-line="4" selection-start-column="111" selection-end-line="4" selection-end-column="111" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.474704">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="gasCollection.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Scripts/App/gasCollection.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="544">
+                  <caret line="134" column="102" selection-start-line="134" selection-start-column="102" selection-end-line="134" selection-end-column="102" />
+                  <folding>
+                    <element signature="e#116#586#0" expanded="false" />
+                    <element signature="e#718#724#0" expanded="false" />
+                    <element signature="e#845#1002#0" expanded="false" />
+                    <element signature="e#1298#3457#0" expanded="false" />
+                    <element signature="e#3483#6172#0" expanded="false" />
+                    <element signature="e#6197#7246#0" expanded="false" />
+                    <element signature="e#8252#8856#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gasCollectionUtils.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Scripts/Shared/gasCollectionUtils.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="254">
+                  <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+                  <folding>
+                    <element signature="n#!!doc;n#getGasCollectionData#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="reports.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Static/gascollection/reports.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="47" />
+                  <folding>
+                    <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                    <element signature="e#5267#7708#1" expanded="false" />
+                    <element signature="e#7709#8947#1" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="580">
+                  <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="gasCollectionUtils.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Scripts/Shared/gasCollectionUtils.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="544">
+                  <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+                  <folding>
+                    <element signature="n#!!doc;n#getGasCollectionData#0" expanded="false" />
+                    <element signature="n#!!block;n#gasCollectionTableData#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PA.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Scripts/App/PA.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-74">
+                  <caret line="680" column="29" selection-start-line="680" selection-start-column="29" selection-end-line="680" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#81#2307#0" expanded="false" />
+                    <element signature="e#2426#2430#0" expanded="false" />
+                    <element signature="e#2560#7577#0" expanded="false" />
+                    <element signature="e#13370#18466#0" expanded="false" />
+                    <element signature="e#26011#26636#0" expanded="false" />
+                    <element signature="e#26752#28146#0" expanded="false" />
+                    <element signature="e#28284#29137#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Scripts/Shared/common.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="494">
+                  <caret line="149" column="24" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#1211#3129#0" expanded="false" />
+                    <element signature="e#3436#4653#0" expanded="false" />
+                    <marker date="1472455945468" expanded="true" signature="1376:1385" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -115,9 +162,9 @@
         <option value="$PROJECT_DIR$/Scripts/App/indexDaf.js" />
         <option value="$PROJECT_DIR$/Scripts/Shared/utilsGasCollection.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/Scripts/App/gasCollection.js" />
-        <option value="$PROJECT_DIR$/Static/gascollection/reports.html" />
         <option value="$PROJECT_DIR$/Scripts/Shared/gasCollectionUtils.js" />
+        <option value="$PROJECT_DIR$/Static/gascollection/reports.html" />
+        <option value="$PROJECT_DIR$/Scripts/App/gasCollection.js" />
       </list>
     </option>
   </component>
@@ -132,9 +179,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-14" />
-    <option name="width" value="1190" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -201,10 +249,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ColorIdeProjectViewPane">
         <subPane />
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -219,10 +267,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:58305/gasCollection/index.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="false" name="common.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="common.js" working-dir="$PROJECT_DIR$/Scripts/Shared">
       <method />
     </configuration>
@@ -233,7 +278,7 @@
       </EXTENSION>
       <method />
     </configuration>
-    <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:49447/gasCollection/index.html">
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:49712/gasCollection/index.html">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -282,18 +327,16 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.common.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.gasCollection.js" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.common.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.gasCollection.js" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.gasCollection.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.common.js" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.gasCollection.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.common.js" />
       </list>
     </recent_temporary>
   </component>
@@ -337,18 +380,19 @@
       <workItem from="1479225408636" duration="53000" />
       <workItem from="1479805793204" duration="3171000" />
       <workItem from="1479989593940" duration="8670000" />
-      <workItem from="1480059371716" duration="10090000" />
+      <workItem from="1480059371716" duration="10569000" />
+      <workItem from="1480318839406" duration="20605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103162000" />
+    <option name="totallyTimeSpent" value="124246000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="0" width="1190" height="1040" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08155651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08127018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -397,10 +441,13 @@
         <state relative-caret-position="408">
           <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
+            <element signature="e#116#586#0" expanded="false" />
+            <element signature="e#718#724#0" expanded="false" />
             <element signature="e#845#1002#0" expanded="false" />
-            <element signature="e#1230#3389#0" expanded="false" />
-            <element signature="e#3415#6104#0" expanded="false" />
-            <element signature="e#6129#7178#0" expanded="false" />
+            <element signature="e#1298#3457#0" expanded="false" />
+            <element signature="e#3483#6172#0" expanded="false" />
+            <element signature="e#6197#7246#0" expanded="false" />
+            <element signature="e#8252#8856#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -418,8 +465,9 @@
         <state relative-caret-position="34">
           <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding>
-            <element signature="e#4372#6813#1" expanded="false" />
-            <element signature="e#6814#8052#1" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="e#5267#7708#1" expanded="false" />
+            <element signature="e#7709#8947#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -451,10 +499,13 @@
         <state relative-caret-position="408">
           <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
+            <element signature="e#116#586#0" expanded="false" />
+            <element signature="e#718#724#0" expanded="false" />
             <element signature="e#845#1002#0" expanded="false" />
-            <element signature="e#1230#3389#0" expanded="false" />
-            <element signature="e#3415#6104#0" expanded="false" />
-            <element signature="e#6129#7178#0" expanded="false" />
+            <element signature="e#1298#3457#0" expanded="false" />
+            <element signature="e#3483#6172#0" expanded="false" />
+            <element signature="e#6197#7246#0" expanded="false" />
+            <element signature="e#8252#8856#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -472,8 +523,9 @@
         <state relative-caret-position="34">
           <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding>
-            <element signature="e#4372#6813#1" expanded="false" />
-            <element signature="e#6814#8052#1" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="e#5267#7708#1" expanded="false" />
+            <element signature="e#7709#8947#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -505,10 +557,13 @@
         <state relative-caret-position="408">
           <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
+            <element signature="e#116#586#0" expanded="false" />
+            <element signature="e#718#724#0" expanded="false" />
             <element signature="e#845#1002#0" expanded="false" />
-            <element signature="e#1230#3389#0" expanded="false" />
-            <element signature="e#3415#6104#0" expanded="false" />
-            <element signature="e#6129#7178#0" expanded="false" />
+            <element signature="e#1298#3457#0" expanded="false" />
+            <element signature="e#3483#6172#0" expanded="false" />
+            <element signature="e#6197#7246#0" expanded="false" />
+            <element signature="e#8252#8856#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,8 +581,9 @@
         <state relative-caret-position="34">
           <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding>
-            <element signature="e#4372#6813#1" expanded="false" />
-            <element signature="e#6814#8052#1" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="e#5267#7708#1" expanded="false" />
+            <element signature="e#7709#8947#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -552,10 +608,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#116#586#0" expanded="false" />
+            <element signature="e#718#724#0" expanded="false" />
             <element signature="e#845#1002#0" expanded="false" />
-            <element signature="e#1230#3389#0" expanded="false" />
-            <element signature="e#3415#6104#0" expanded="false" />
-            <element signature="e#6129#7178#0" expanded="false" />
+            <element signature="e#1298#3457#0" expanded="false" />
+            <element signature="e#3483#6172#0" expanded="false" />
+            <element signature="e#6197#7246#0" expanded="false" />
+            <element signature="e#8252#8856#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1170,18 +1229,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="40" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <marker date="1471849815866" expanded="true" signature="63:142" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="94:134" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="205:753" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="246:316" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="290:305" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="345:741" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="379:529" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="444:464" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="563:730" ph="..." />
-            <marker date="1471849815866" expanded="true" signature="636:656" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1192,47 +1239,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/App/indexDaf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="111" selection-start-line="4" selection-start-column="111" selection-end-line="4" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/Shared/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../jsonFromAMKP/v_GasCollectionData (5).json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="418" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="418" />
-          <folding>
-            <marker date="1479809623250" expanded="true" signature="0:4371" ph="{&quot;@odata.context&quot;: &quot;http://krr-tst-palbp01/odata_unified_svc/api/Dynamic/$metadata##v_GasCollectionData&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="114:4369" ph="[...]" />
-            <marker date="1479809623250" expanded="true" signature="120:546" ph="{&quot;ID&quot;: &quot;189d5539-7422-4543-8807-e5bff6a1290d&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="547:973" ph="{&quot;ID&quot;: &quot;c4ebe404-bbc4-420f-b5f2-dfee8cf74040&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="974:1400" ph="{&quot;ID&quot;: &quot;e0af8ea7-eb59-47fa-ac9b-f73d9b1e99a4&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="1401:1827" ph="{&quot;ID&quot;: &quot;4855f450-8b71-45ed-b905-fdaa74750132&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="1828:2254" ph="{&quot;ID&quot;: &quot;6597611d-ee6b-4047-a45a-2373842e7dd0&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="2255:2681" ph="{&quot;ID&quot;: &quot;ad4763aa-1455-407f-a6a1-d29eff0dd72e&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="2682:3108" ph="{&quot;ID&quot;: &quot;89a370af-907c-465d-b545-1baff867e270&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="3109:3535" ph="{&quot;ID&quot;: &quot;46423a36-1711-4b02-922f-d3b52eb245c6&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="3536:3949" ph="{&quot;ID&quot;: &quot;47c88998-821d-4504-b540-91580052c3f1&quot;...}" />
-            <marker date="1479809623250" expanded="true" signature="3950:4365" ph="{&quot;ID&quot;: &quot;aba89157-b352-4c30-a1fd-1fd8f7e7ce7c&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,7 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,7 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1264,22 +1272,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/Shared/common.js">
+    <entry file="file://$PROJECT_DIR$/Scripts/App/indexDaf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="157" column="15" selection-start-line="157" selection-start-column="15" selection-end-line="157" selection-end-column="15" />
+        <state relative-caret-position="68">
+          <caret line="4" column="111" selection-start-line="4" selection-start-column="111" selection-end-line="4" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/Shared/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1211#3129#0" expanded="false" />
-            <element signature="e#3436#4653#0" expanded="false" />
-            <marker date="1472455945468" expanded="true" signature="1376:1385" ph="..." />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/App/PA.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="710" column="18" selection-start-line="710" selection-start-column="18" selection-end-line="710" selection-end-column="18" />
+        <state relative-caret-position="-74">
+          <caret line="680" column="29" selection-start-line="680" selection-start-column="29" selection-end-line="680" selection-end-column="29" />
           <folding>
             <element signature="e#81#2307#0" expanded="false" />
             <element signature="e#2426#2430#0" expanded="false" />
@@ -1292,36 +1306,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/Shared/gasCollectionUtils.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc;n#getGasCollectionData#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="580">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripts/App/gasCollection.js">
+    <entry file="file://$PROJECT_DIR$/Scripts/Shared/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        <state relative-caret-position="494">
+          <caret line="149" column="24" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
           <folding>
-            <element signature="e#845#1002#0" expanded="false" />
-            <element signature="e#1230#3389#0" expanded="false" />
-            <element signature="e#3415#6104#0" expanded="false" />
-            <element signature="e#6129#7178#0" expanded="false" />
+            <element signature="e#1211#3129#0" expanded="false" />
+            <element signature="e#3436#4653#0" expanded="false" />
+            <marker date="1472455945468" expanded="true" signature="1376:1385" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Static/gascollection/reports.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="47" />
           <folding>
-            <element signature="e#4372#6813#1" expanded="false" />
-            <element signature="e#6814#8052#1" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="e#5267#7708#1" expanded="false" />
+            <element signature="e#7709#8947#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/App/gasCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="134" column="102" selection-start-line="134" selection-start-column="102" selection-end-line="134" selection-end-column="102" />
+          <folding>
+            <element signature="e#116#586#0" expanded="false" />
+            <element signature="e#718#724#0" expanded="false" />
+            <element signature="e#845#1002#0" expanded="false" />
+            <element signature="e#1298#3457#0" expanded="false" />
+            <element signature="e#3483#6172#0" expanded="false" />
+            <element signature="e#6197#7246#0" expanded="false" />
+            <element signature="e#8252#8856#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/Shared/gasCollectionUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc;n#getGasCollectionData#0" expanded="false" />
+            <element signature="n#!!block;n#gasCollectionTableData#0" expanded="false" />
           </folding>
         </state>
       </provider>

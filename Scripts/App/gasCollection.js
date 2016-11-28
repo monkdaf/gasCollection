@@ -36,6 +36,8 @@ angular.module('indexAppDaf')
     $scope.equipmentlist.selected = $scope.equipmentlist[0];
 
     $scope.showFullData = false;
+    $scope.onlineData = false;
+    $scope.errorReceiveData = false;
 
     $scope.dataDaily = [
       {datetime: '01:00', valPE: 12.2, valTE: 22, valQE: 0.66, val: 105, sumVal: 105 },
@@ -112,7 +114,27 @@ angular.module('indexAppDaf')
       {datetime: '11', valPE: 11.4, valTE: 19, valQE: 0.68, val: 109, sumVal: 1088 },
       {datetime: '12', valPE: 8.1 ,  valTE: 19,  valQE: 0.73,  val: 98, sumVal:  1186 }
     ];
+    $scope.ttt = '---';
+    $scope.selectedQuery = '';
+    $scope.selectedQueryTable = '';
 
+    $scope.getGasDataClick = function() {
+      let queryGasCollection = "?$filter=IDeq eq 10010 and type eq '1'";
+      // var queryGasCollection = '';
+      const gasCollectionData = getGasCollectionData( $scope.onlineData, queryGasCollection);
+      $scope.ttt = gasCollectionData;
+    };
+
+    $scope.getAllGasDataClick = function() {
+      var queryGasCollection = '';
+      const gasCollectionData = getGasCollectionData( $scope.onlineData, queryGasCollection);
+      $scope.ttt = gasCollectionData;
+    };
+
+    $scope.getSelectedGasDataClick = function() {
+      const gasCollectionData = getGasCollectionData( $scope.onlineData, $scope.selectedQuery, $scope.selectedQueryTable);
+      $scope.ttt = gasCollectionData;
+    };
 
     $scope.dataGasCollection = gasCollectionTableData();
     $scope.dataGasCollection = getGasCollectionData();
