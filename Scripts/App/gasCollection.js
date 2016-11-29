@@ -118,21 +118,36 @@ angular.module('indexAppDaf')
     $scope.selectedQuery = '';
     $scope.selectedQueryTable = '';
 
+    var date = getTimeToUpdate();
+    //$scope.dateStart = $scope.dateEnd = '{0}.{1}.{2}'.format(date.day, date.month, date.year);
+    $( function() {
+      $( "#select-date-start" ).datepicker({
+        defaultDate: new Date($scope.dateStart),
+        dateFormat: 'dd.mm.yy',
+      });
+    } );
+    $( function() {
+      $( "#select-date-end" ).datepicker({
+        defaultDate: new Date($scope.dateEnd),
+        dateFormat: 'dd.mm.yy',
+      });
+    } );
+
     $scope.getGasDataClick = function() {
-      let queryGasCollection = "?$filter=IDeq eq 10010 and type eq '1'";
+      var queryGasCollection = "?$filter=IDeq eq 10010 and type eq '1'";
       // var queryGasCollection = '';
-      const gasCollectionData = getGasCollectionData( $scope.onlineData, queryGasCollection);
+      var gasCollectionData = getGasCollectionData( $scope.onlineData, queryGasCollection);
       $scope.ttt = gasCollectionData;
     };
 
     $scope.getAllGasDataClick = function() {
       var queryGasCollection = '';
-      const gasCollectionData = getGasCollectionData( $scope.onlineData, queryGasCollection);
+      var gasCollectionData = getGasCollectionData( $scope.onlineData, queryGasCollection);
       $scope.ttt = gasCollectionData;
     };
 
     $scope.getSelectedGasDataClick = function() {
-      const gasCollectionData = getGasCollectionData( $scope.onlineData, $scope.selectedQuery, $scope.selectedQueryTable);
+      var gasCollectionData = getGasCollectionData( $scope.onlineData, $scope.selectedQuery, $scope.selectedQueryTable);
       $scope.ttt = gasCollectionData;
     };
 

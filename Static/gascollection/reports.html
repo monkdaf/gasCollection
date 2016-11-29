@@ -15,6 +15,31 @@
         <select ng-model="equipmentlist.selected"
                 ng-options="item.description for item in equipmentlist track by item.id"></select>
     </div>
+    <div class="date-control-wrapper">
+        <!--{{ 'marker.period' | translate }}:-->
+        Дата начала:
+        <input type="text"
+               id="select-date-start"
+               ng-model="dateStart" />
+    </div>
+<!--
+    <div class="date-control-wrapper">
+        &lt;!&ndash;{{ 'marker.period' | translate }}:&ndash;&gt;
+        Дата начала:
+        <input type="text"
+               id="select-date-start"
+               &lt;!&ndash;class="form-control"&ndash;&gt;
+               ng-model="dateStart" />
+    </div>
+    <div class="date-control-wrapper">
+        &lt;!&ndash;{{ 'marker.period' | translate }}:&ndash;&gt;
+        Дата окончания:
+        <input type="text"
+               id="select-date-end",
+               &lt;!&ndash;class="form-control"&ndash;&gt;
+               ng-model="dateEnd" />
+    </div>
+-->
     <button type="button" class="btn btn-primary" ng-click="getGasDataClick()">Получить данные</button>
     <button type="button" class="btn btn-primary" ng-click="getAllGasDataClick()">Получить все данные</button>
     <div>
@@ -36,10 +61,12 @@
 <div style="background: lightgoldenrodyellow;">
     <div>--- Debug data ---</div>
     <div></div>
+    <div>DateStart is:{{dateStart}} dateEnd is:{{dateEnd}}</div>
     <div>
         Online data (now is <b>{{onlineData}}</b>): <input type="checkbox" ng-model="onlineData"/>
     </div>
     <div>Data is:{{ttt}}</div>
+
     <div>Equipment:{{equipmentlist.selected.id}} - {{equipmentlist.selected.description}}</div>
 </div>
 

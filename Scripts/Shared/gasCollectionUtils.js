@@ -30,7 +30,7 @@ function getGasCollectionData(isOnlineData, queryGasCollection, queryTable) {
       ]
     });
   }
-  let table = 'v_GasCollectionData';
+  var table = 'v_GasCollectionData';
   if (queryTable) {
     table = queryTable;
   }
@@ -50,11 +50,11 @@ function getGasCollectionData(isOnlineData, queryGasCollection, queryTable) {
 function gasCollectionTableData() {
   //  {datetime: '23:59', valPE: 11.4, valTE: 19, valQE: 0.86, val: 109, sumVal: 2439 }
   // "ID":"189d5539","dtStart":"2016-11-21T09:00:00+02:00","dtEnd":"2016-11-21T10:00:00+02:00","FE":123456.789,"TE":12.34,"PE":34.56,"QE":56.78,"type":"1","IDeq":10010,"Description":"qqqq"
-  const gasColectionRawData = getGasCollectionData();
-  let gasCollectionArray = [];
+  var gasColectionRawData = getGasCollectionData();
+  var gasCollectionArray = [];
   gasCollectionArray = gasColectionRawData.value.map(function (curr) {
-    const myDateTime = Date.parse(curr.dtStart);
-    //const stringDateTime = dateTime.getFullYear();
+    var myDateTime = Date.parse(curr.dtStart);
+    //var stringDateTime = dateTime.getFullYear();
     return ({
       datetime: curr.dtStart, //"2016-11-21T09:00:00+02:00",
       valPE: curr.PE,
